@@ -6,7 +6,7 @@ Dia diem: Tan Son Nhat Pavilion Convention Center, Sanh Amber – Tang 4,
 MO WEBSITE
 - Mo index.html trong Chrome, Edge hoac trinh duyet bat ky.
 - Nhan MO THIEP de xem loi moi.
-- Nhan nut nhac de phat My Love - Westlife.
+- Nhan nut nhac de phat 50 năm về sau.
 
 DUA WEBSITE LEN INTERNET
 - Repository GitHub: https://github.com/mitt2105/thiep-cuoi-duc-long-hoai-thuong
