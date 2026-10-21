@@ -362,3 +362,16 @@ select:focus-visible, textarea:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+Nêu
+
+/* Mobile layout: reduce section gaps and keep text sizes comfortable. */
+@media (max-width: 600px) {
+  .section-pad { padding-top: 52px; padding-bottom: 52px; }
+  .hero { padding-top: 38px; }
+  .hero-photo-frame { margin-bottom: 22px; }
+  .section-title { margin-bottom: 20px; }
+  .section-subtitle { margin: -8px 0 20px; }
+  .gallery-tip { margin-top: 12px; }
+  .rsvp-form { margin-top: 20px; }
+  .rsvp-form label { margin-top: 14px; }
+}
