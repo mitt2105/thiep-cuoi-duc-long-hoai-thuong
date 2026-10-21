@@ -5,7 +5,7 @@
   --gold: #b9955d;
   --gold-dark: #85643b;
   --ink: #493f35;
-  --muted: #877966;
+  --muted: #695d4e;
   --line: #dfcfb1;
   --blush: #efe5d6;
   --shadow: 0 22px 60px rgba(74, 54, 30, .11);
@@ -22,9 +22,9 @@ body {
   background: var(--cream);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.8;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
 button, input, select, textarea { font: inherit; }
@@ -38,9 +38,9 @@ select:focus-visible, textarea:focus-visible {
 
 .section-pad { padding: 76px 22px; }
 .eyebrow, .small-caps, .detail-label {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: .22em;
+  letter-spacing: .16em;
 }
 .eyebrow {
   margin: 0 0 16px;
@@ -122,20 +122,23 @@ select:focus-visible, textarea:focus-visible {
 .envelope-card > * { position: relative; }
 .envelope-card .eyebrow { margin-bottom: 20px; letter-spacing: .28em; }
 .seal {
-  display: grid;
+  display: flex;
   width: 58px;
   height: 58px;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
   margin: 0 auto 18px;
   border: 1px solid var(--gold);
   border-radius: 50%;
   color: var(--gold-dark);
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: .02em;
 }
-.seal span { color: var(--gold); font-family: var(--script); font-size: 15px; }
-.envelope-intro { margin: 0 0 9px; color: var(--muted); font-size: 11px; letter-spacing: .16em; }
+.seal .seal-initial { color: var(--gold-dark); font-family: var(--serif); font-size: 17px; }
+.seal .seal-ampersand { color: var(--gold); font-family: var(--script); font-size: 15px; }
+.envelope-intro { margin: 0 0 9px; color: var(--muted); font-size: 13px; letter-spacing: .12em; }
 .envelope-card h1 {
   margin: 0;
   color: #765631;
@@ -150,7 +153,7 @@ select:focus-visible, textarea:focus-visible {
   font-size: .74em;
   font-weight: 400;
 }
-.date-large { margin: 15px 0 22px; font-size: 12px; letter-spacing: .22em; }
+.date-large { margin: 15px 0 22px; font-size: 14px; letter-spacing: .16em; }
 .primary-button {
   display: inline-flex;
   min-height: 48px;
@@ -164,9 +167,9 @@ select:focus-visible, textarea:focus-visible {
   box-shadow: 0 7px 18px rgba(133, 97, 46, .14);
   color: #fffdf8;
   cursor: pointer;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .15em;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
   text-decoration: none;
   transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
@@ -174,7 +177,7 @@ select:focus-visible, textarea:focus-visible {
 .primary-button span { font-size: 16px; }
 .open-button { width: min(100%, 245px); }
 .envelope-note { margin: 20px 0 0; color: var(--muted); font-family: var(--serif); font-size: 17px; font-style: italic; }
-.scroll-hint { margin: 22px 0 0; color: #917d5c; font-size: 9px; letter-spacing: .23em; }
+.scroll-hint { margin: 22px 0 0; color: #715c3c; font-size: 11px; letter-spacing: .16em; }
 
 /* Music and revealed invitation */
 .music-control { position: fixed; z-index: 20; top: max(12px, env(safe-area-inset-top)); right: 12px; }
@@ -187,7 +190,7 @@ select:focus-visible, textarea:focus-visible {
   box-shadow: 0 4px 16px rgba(74,54,30,.1);
   color: var(--gold-dark);
   cursor: pointer;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .04em;
   backdrop-filter: blur(8px);
 }
@@ -232,8 +235,8 @@ select:focus-visible, textarea:focus-visible {
 .closing-names .name-line, .closing-names .ampersand { display: block; }
 .couple-name .name-line { color: var(--ink); font-family: var(--serif); font-size: 1em; }
 .couple-name .ampersand, .closing-names .ampersand { margin: 2px 0 0; color: var(--gold); font-family: var(--script); font-size: .78em; line-height: .78; }
-.invitation-copy { max-width: 470px; margin: 18px auto; color: #746858; font-size: 12px; line-height: 2; }
-.text-link { display: inline-block; padding-bottom: 4px; border-bottom: 1px solid var(--line); color: var(--gold-dark); font-size: 10px; letter-spacing: .12em; text-decoration: none; }
+.invitation-copy { max-width: 520px; margin: 20px auto; color: #5e5549; font-size: 16px; line-height: 1.85; }
+.text-link { display: inline-block; padding-bottom: 4px; border-bottom: 1px solid var(--line); color: var(--gold-dark); font-size: 13px; letter-spacing: .06em; text-decoration: none; }
 .text-link:hover { border-color: var(--gold-dark); }
 
 /* Date and venue */
@@ -241,8 +244,8 @@ select:focus-visible, textarea:focus-visible {
 .countdown { display: grid; max-width: 530px; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 28px auto 18px; }
 .countdown div { padding: 15px 4px 11px; border: 1px solid #d8c39f; background: rgba(255,253,248,.68); }
 .countdown strong { display: block; color: #85643b; font-family: var(--serif); font-size: clamp(28px, 7vw, 40px); font-weight: 500; line-height: 1.05; }
-.countdown span { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; letter-spacing: .08em; }
-.date-note { color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+.countdown span { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; letter-spacing: .04em; }
+.date-note { color: var(--muted); font-size: 13px; letter-spacing: .05em; }
 .details-section { max-width: 900px; margin: auto; text-align: center; }
 .details-grid { display: grid; gap: 14px; text-align: center; }
 .detail-card {
@@ -253,41 +256,41 @@ select:focus-visible, textarea:focus-visible {
 }
 .detail-icon { color: var(--gold); font-family: var(--serif); font-size: 27px; line-height: 1.3; }
 .detail-label { margin: 7px 0 2px; color: var(--gold-dark); }
-.detail-card h3 { margin: 0 0 4px; font-family: var(--serif); font-size: 27px; font-weight: 500; line-height: 1.2; }
-.detail-card p { margin: 4px 0; color: var(--muted); font-size: 11px; }
-.detail-card .hall-name { color: var(--ink); font-size: 10px; letter-spacing: .03em; }
+.detail-card h3 { margin: 0 0 4px; font-family: var(--serif); font-size: 29px; font-weight: 500; line-height: 1.2; }
+.detail-card p { margin: 6px 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.detail-card .hall-name { color: var(--ink); font-size: 13px; letter-spacing: .02em; }
 .detail-card .primary-button { margin-top: 15px; }
 .map-button { width: min(100%, 250px); }
 
 /* Photo album */
 .gallery-section { background: var(--paper); text-align: center; }
-.section-subtitle { margin: -14px 0 26px; color: var(--muted); font-family: var(--serif); font-size: 18px; font-style: italic; }
+.section-subtitle { margin: -14px 0 26px; color: var(--muted); font-family: var(--serif); font-size: 20px; font-style: italic; }
 .gallery-grid { display: grid; max-width: 850px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin: auto; }
 .gallery-item { min-width: 0; aspect-ratio: 1; overflow: hidden; padding: 0; border: 1px solid #e9dfcf; background: #eadfce; cursor: zoom-in; }
 .gallery-item img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .gallery-item:hover img { transform: scale(1.045); }
 .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
 .gallery-item.wide { grid-column: span 2; aspect-ratio: 2 / 1; }
-.gallery-tip { margin: 17px 0 0; color: #9b8b76; font-size: 10px; }
+.gallery-tip { margin: 17px 0 0; color: #695d4e; font-size: 13px; }
 
 /* RSVP and wedding gift */
 .rsvp-section { max-width: 690px; margin: auto; text-align: center; }
 .rsvp-form { max-width: 470px; margin: 28px auto 0; text-align: left; }
-.rsvp-form label { display: block; margin: 15px 0 6px; color: #806c52; font-size: 10px; letter-spacing: .04em; }
+.rsvp-form label { display: block; margin: 17px 0 7px; color: #665239; font-size: 14px; font-weight: 500; letter-spacing: .01em; }
 .rsvp-form input, .rsvp-form select, .rsvp-form textarea {
   width: 100%;
-  padding: 12px 13px;
+  padding: 14px 14px;
   border: 1px solid #ddc9aa;
   border-radius: 0;
   background: var(--paper);
   color: var(--ink);
-  font-size: 12px;
+  font-size: 16px;
 }
 .rsvp-form textarea { resize: vertical; }
 .submit-button { width: 100%; margin-top: 22px; }
-.form-note { color: #8c7c68; font-size: 10px; line-height: 1.7; }
+.form-note { color: #695d4e; font-size: 13px; line-height: 1.7; }
 .gift-section { max-width: 760px; margin: 0 auto; background: var(--paper); text-align: center; }
-.gift-copy { max-width: 470px; margin: 0 auto; color: #746858; font-size: 12px; line-height: 2; }
+.gift-copy { max-width: 520px; margin: 0 auto; color: #5e5549; font-size: 16px; line-height: 1.85; }
 .gift-button {
   display: inline-flex;
   min-height: 48px;
@@ -300,9 +303,9 @@ select:focus-visible, textarea:focus-visible {
   background: transparent;
   color: var(--gold-dark);
   cursor: pointer;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .14em;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
   transition: background .2s ease, color .2s ease;
 }
 .gift-button:hover { background: var(--gold-dark); color: var(--paper); }
@@ -328,10 +331,10 @@ select:focus-visible, textarea:focus-visible {
 .gift-modal-title { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 35px; font-weight: 500; line-height: 1.1; }
 .gift-modal-copy { margin: 8px 0 15px; color: var(--muted); font-family: var(--serif); font-size: 18px; }
 .gift-qr { display: block; width: min(100%, 260px); height: auto; margin: 0 auto 12px; padding: 5px; border: 1px solid #e6e2da; border-radius: 8px; background: #fff; object-fit: contain; }
-.gift-account-name { margin: 5px 0 0; color: var(--ink); font-size: 12px; font-weight: 600; letter-spacing: .15em; }
-.gift-bank-name { margin: 1px 0 8px; color: var(--gold-dark); font-size: 10px; letter-spacing: .12em; }
+.gift-account-name { margin: 5px 0 0; color: var(--ink); font-size: 14px; font-weight: 600; letter-spacing: .1em; }
+.gift-bank-name { margin: 1px 0 8px; color: var(--gold-dark); font-size: 12px; letter-spacing: .08em; }
 .gift-thankyou { max-width: 270px; margin: 8px auto 16px; color: var(--muted); font-family: var(--serif); font-size: 16px; line-height: 1.4; }
-.gift-close-button { min-width: 120px; padding: 10px 20px; border: 1px solid var(--line); background: transparent; color: var(--gold-dark); cursor: pointer; font-size: 10px; letter-spacing: .16em; }
+.gift-close-button { min-width: 120px; padding: 10px 20px; border: 1px solid var(--line); background: transparent; color: var(--gold-dark); cursor: pointer; font-size: 12px; letter-spacing: .08em; }
 .lightbox { z-index: 70; padding: 24px; background: rgba(27, 24, 21, .94); }
 .lightbox img { max-width: 100%; max-height: 86svh; object-fit: contain; box-shadow: 0 10px 40px rgba(0,0,0,.35); }
 .lightbox-close { position: absolute; top: 8px; right: 18px; border: 0; background: none; color: white; cursor: pointer; font-size: 38px; }
