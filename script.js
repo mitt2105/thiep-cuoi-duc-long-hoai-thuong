@@ -102,13 +102,63 @@ $('musicToggle').addEventListener('click', async () => {
   }
 });
 
-// Demo only: this form does not send or store guest responses yet.
-$('rsvpForm').addEventListener('submit', (event) => {
+// RSVP: Gửi thông tin khách mời đến Google Apps Script
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbznJ3l1N0IxXKfVJKIl4oU2NZQYAMdmc1UFCEUihxokpmQJ4QBLmmdfLPFbDQuuxB0J/exec';
+
+const rsvpForm = $('rsvpForm');
+const rsvpSubmitButton = rsvpForm.querySelector('button[type="submit"]');
+const rsvpFormNote = rsvpForm.querySelector('.form-note');
+
+rsvpForm.addEventListener('submit', async (event) => {
   event.preventDefault();
+
+  if (!rsvpForm.reportValidity()) return;
+
   const name = $('guestName').value.trim();
   const attendance = $('attendance').value;
-  const message = attendance === 'yes'
-    ? `Cảm ơn ${name}! Bản demo đã ghi nhận thao tác xác nhận trên màn hình, nhưng chưa gửi dữ liệu đến cô dâu chú rể.`
-    : `Cảm ơn ${name} đã phản hồi. Bản demo chưa gửi dữ liệu đến cô dâu chú rể.`;
-  alert(message);
+  const count = attendance === 'yes'
+    ? $('guestCount').value
+    : '0';
+  const message = $('guestMessage').value.trim();
+
+  if (!name) {
+    rsvpFormNote.textContent = 'Vui lòng nhập họ và tên.';
+    $('guestName').focus();
+    return;
+  }
+
+  const payload = new URLSearchParams({
+    guestName: name,
+    attendance: attendance,
+    guestCount: count,
+    guestMessage: message
+  });
+
+  rsvpSubmitButton.disabled = true;
+  rsvpFormNote.setAttribute('role', 'status');
+  rsvpFormNote.setAttribute('aria-live', 'polite');
+  rsvpFormNote.textContent = 'Đang gửi xác nhận…';
+
+  try {
+    await fetch(RSVP_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: payload
+    });
+
+    rsvpFormNote.textContent =
+      'Cảm ơn quý khách! Yêu cầu gửi xác nhận đã được thực hiện.';
+
+    rsvpForm.reset();
+
+  } catch (error) {
+    rsvpFormNote.textContent =
+      'Chưa gửi được thông tin. Vui lòng kiểm tra mạng và thử lại.';
+
+  } finally {
+    rsvpSubmitButton.disabled = false;
+  }
 });
