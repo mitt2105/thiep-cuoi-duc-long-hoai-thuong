@@ -385,7 +385,6 @@ Nêu
 .rsvp-copy-line {
   display: inline;
 }
-
 @media (max-width: 600px) {
   .rsvp-copy-line {
     display: block;
