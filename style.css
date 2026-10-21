@@ -11,7 +11,7 @@
   --shadow: 0 22px 60px rgba(74, 54, 30, .11);
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Montserrat', Arial, sans-serif;
-  --script: 'Great Vibes', cursive;
+  --handwriting: 'Allura', cursive;
 }
 
 * { box-sizing: border-box; }
@@ -142,7 +142,7 @@ select:focus-visible, textarea:focus-visible {
 .envelope-card h1 {
   margin: 0;
   color: #765631;
-  font-family: var(--serif);
+  font-family: var(--handwriting);
   font-size: clamp(39px, 10vw, 53px);
   font-weight: 500;
   line-height: .99;
@@ -226,14 +226,18 @@ select:focus-visible, textarea:focus-visible {
 .couple-name {
   margin: 0;
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--handwriting);
   font-size: clamp(40px, 10vw, 58px);
   font-weight: 500;
   line-height: .98;
 }
 .couple-name .name-line, .couple-name .ampersand,
 .closing-names .name-line, .closing-names .ampersand { display: block; }
-.couple-name .name-line { color: var(--ink); font-family: var(--serif); font-size: 1em; }
+.couple-name .name-line {
+  color: var(--ink);
+  font-family: var(--handwriting);
+  font-size: 1em;
+}
 .couple-name .ampersand, .closing-names .ampersand { margin: 2px 0 0; color: var(--gold); font-family: var(--script); font-size: .78em; line-height: .78; }
 .invitation-copy { max-width: 520px; margin: 20px auto; color: #40372e; font-size: 16px; line-height: 1.8; text-wrap: pretty; }
 .text-link { display: inline-block; padding-bottom: 4px; border-bottom: 1px solid var(--line); color: var(--gold-dark); font-size: 13px; letter-spacing: .06em; text-decoration: none; }
@@ -318,7 +322,11 @@ select:focus-visible, textarea:focus-visible {
 .thank-you { margin: 0; color: #674517; font-family: var(--script); font-size: 54px; font-weight: 400; line-height: 1.2; }
 .closing-copy { max-width: 390px; margin: 14px auto; color: #40362b; font-family: var(--serif); font-size: 17px; line-height: 1.6; text-wrap: pretty; }
 .closing-names { margin: 9px 0 0; color: #765631; font-family: var(--serif); font-size: 29px; line-height: 1; }
-.closing-names .name-line { font-size: 1em; line-height: 1.05; }
+.closing-names .name-line {
+  font-family: var(--handwriting);
+  font-size: 1.18em;
+  line-height: 1.05;
+}
 .closing-names .ampersand { font-size: .75em; }
 .back-top { width: 42px; height: 42px; margin-top: 22px; border: 1px solid var(--gold); border-radius: 50%; background: transparent; color: var(--gold-dark); cursor: pointer; font-size: 21px; }
 .gift-modal, .lightbox { position: fixed; z-index: 60; inset: 0; display: flex; align-items: center; justify-content: center; padding: 18px; background: rgba(37, 31, 24, .72); backdrop-filter: blur(5px); }
