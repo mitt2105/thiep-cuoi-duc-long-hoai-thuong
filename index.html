@@ -1,7 +1,43 @@
 <!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3ea">
+  <meta name="description" content="Thiệp mời tiệc cưới Đức Long & Hoài Thương — 04.12.2026">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Đức Long & Hoài Thương — Thiệp mời cưới">
+  <meta property="og:description" content="Sự hiện diện của quý khách là niềm vui và niềm vinh hạnh đối với gia đình chúng tôi. Trân trọng kính mời quý khách đến chung vui trong ngày trọng đại.">
+  <meta property="og:url" content="https://mitt2105.github.io/thiep-cuoi-duc-long-hoai-thuong/">
+  <meta property="og:image" content="https://mitt2105.github.io/thiep-cuoi-duc-long-hoai-thuong/images/anhcuoi20.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Đức Long & Hoài Thương — Thiệp mời cưới</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="music-control" aria-label="Nhạc nền">
+    <button id="musicToggle" class="music-button" type="button" aria-pressed="false" title="Bật hoặc tắt My Love - Westlife">♫ <span id="musicLabel">Bật nhạc</span></button>
+    <audio id="weddingMusic" src="music/wedding.mp3" loop preload="none"></audio>
+  </div>
+
+  <main>
+    <section class="envelope-screen" id="envelopeScreen" aria-label="Phong bì thiệp cưới">
+      <div class="petal petal-one">✿</div><div class="petal petal-two">❧</div>
+      <div class="envelope-card">
+        <p class="eyebrow">WEDDING INVITATION</p>
+        <h1>Đức Long<br><span class="ampersand">&</span><br>Hoài Thương</h1>
+        <p class="envelope-intro">Trân trọng kính mời</p>
+        <div class="gold-rule"><span>✦</span></div>
+        <p class="date-large">04 · 12 · 2026</p>
+        <button class="primary-button open-button" id="openInvitation" type="button">MỞ THIỆP <span>↗</span></button>
+        <p class="envelope-note">Một ngày vui sẽ trọn vẹn hơn khi có quý khách</p>
+      </div>
       <p class="scroll-hint">WITH LOVE, LONG & THƯƠNG</p>
     </section>
-
 
     <div id="invitationContent" class="invitation-content" hidden>
       <section class="hero section-pad" id="home">
@@ -16,7 +52,6 @@
         <a class="text-link" href="#details">Xem thông tin buổi tiệc ↓</a>
       </section>
 
-
       <section class="countdown-section section-pad">
         <p class="eyebrow">THE WEDDING DAY</p><h2 class="section-title">Đếm ngược ngày vui</h2>
         <div class="countdown" aria-label="Đếm ngược đến ngày cưới">
@@ -27,7 +62,6 @@
         </div>
         <p class="date-note">Thứ Sáu · 04 tháng 12 năm 2026</p>
       </section>
-
 
       <section class="details-section section-pad" id="details">
         <p class="eyebrow">JOIN OUR CELEBRATION</p><h2 class="section-title">Thông tin tiệc cưới</h2>
@@ -49,7 +83,6 @@
         </div>
       </section>
 
-
       <section class="gallery-section section-pad" id="gallery">
         <p class="eyebrow">A FEW MOMENTS</p><h2 class="section-title">Album ảnh cưới</h2>
         <p class="section-subtitle">Những khoảnh khắc chúng tôi muốn lưu giữ.</p>
@@ -66,10 +99,9 @@
         <p class="gallery-tip">Chạm vào ảnh để xem lớn hơn</p>
       </section>
 
-
       <section class="rsvp-section section-pad" id="rsvp">
         <p class="eyebrow">KINDLY REPLY</p><h2 class="section-title">Quý khách sẽ đến chứ?</h2>
-        <p class="invitation-copy rsvp-copy"><span class="rsvp-copy-line">Để gia đình đón tiếp được chu đáo,</span><span class="rsvp-copy-line">xin quý khách vui lòng cho biết</span><span class="rsvp-copy-line">có thể tham dự buổi tiệc được hay không?</span></p>
+        <p class="invitation-copy">Để gia đình đón tiếp chu đáo, xin quý khách vui lòng cho biết có thể tham dự buổi tiệc được hay không?</p>
         <form id="rsvpForm" class="rsvp-form">
           <label for="guestName">Họ và tên</label><input id="guestName" name="guestName" type="text" placeholder="Tên quý khách" required>
           <label for="attendance">Xác nhận tham dự</label><select id="attendance" name="attendance" required><option value="yes">Tôi sẽ tham dự</option><option value="no">Rất tiếc, tôi không thể đến</option></select>
@@ -80,8 +112,44 @@
         </form>
       </section>
 
-
       <section class="gift-section section-pad" id="gift">
         <p class="eyebrow">A LITTLE GIFT</p>
         <h2 class="section-title">Gửi lời chúc mừng</h2>
-        <p class="gift-copy"><span class="gift-copy-line">Sự hiện diện và tình cảm của quý khách</span><span class="gift-copy-line">là món quà quý giá nhất đối với chúng tôi.</span><span class="gift-copy-line">Nếu không thể đến chung vui,</span><span class="gift-copy-line">quý khách có thể gửi lời chúc mừng</span><span class="gift-copy-line">đến Đức Long &amp; Hoài Thương tại đây.</span></p>
+        <p class="gift-copy">Sự hiện diện và tình cảm của quý khách là món quà quý giá nhất đối với chúng tôi. Nếu không thể đến chung vui, quý khách có thể gửi lời chúc mừng đến Đức Long &amp; Hoài Thương tại đây.</p>
+        <div class="gold-rule"><span>♡</span></div>
+        <button class="gift-button" id="openGift" type="button">GỬI LỜI CHÚC MỪNG <span>↗</span></button>
+        <p class="gift-note">Tùy tâm · Xin cảm ơn tình cảm của quý khách</p>
+      </section>
+
+      <footer class="closing section-pad">
+        <div class="closing-ornament">❧</div><p class="eyebrow">THANK YOU</p>
+        <h2 class="thank-you">Cảm ơn quý khách</h2>
+        <p class="closing-copy">Cảm ơn quý khách đã dành tình cảm và thời gian cho ngày đặc biệt của chúng tôi.<br>Hẹn gặp quý khách trong ngày vui!</p>
+        <div class="gold-rule"><span>♡</span></div>
+        <p class="closing-names"><span class="name-line">Đức Long</span><span class="ampersand">&</span><span class="name-line">Hoài Thương</span></p><p class="date-note">04 · 12 · 2026</p>
+        <button class="back-top" type="button" id="backToTop" aria-label="Về đầu trang">↑</button>
+      </footer>
+    </div>
+  </main>
+
+  <div class="gift-modal" id="giftModal" hidden role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
+    <div class="gift-modal-card">
+      <button type="button" id="closeGift" class="gift-modal-close" aria-label="Đóng">×</button>
+      <p class="eyebrow">WITH LOVE &amp; GRATITUDE</p>
+      <h2 id="giftModalTitle" class="gift-modal-title">Gửi lời chúc mừng</h2>
+      <p class="gift-modal-copy">Đức Long &amp; Hoài Thương</p>
+      <img class="gift-qr" src="images/qr-mung-cuoi.png" alt="Mã QR VietQR của Lê Đức Long">
+      <p class="gift-account-name">LÊ ĐỨC LONG</p>
+      <p class="gift-bank-name">BIDV · VIETQR</p>
+      <p class="gift-thankyou">Cảm ơn quý khách đã gửi tình cảm đến chúng mình.</p>
+      <button type="button" class="gift-close-button" id="closeGiftBottom">ĐÓNG</button>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Xem ảnh">
+    <button type="button" id="closeLightbox" class="lightbox-close" aria-label="Đóng ảnh">×</button>
+    <img id="lightboxImage" src="" alt="Ảnh cưới phóng to">
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
