@@ -3,9 +3,9 @@
   --cream: #f7f3ea;
   --paper: #fffdf8;
   --gold: #b9955d;
-  --gold-dark: #85643b;
-  --ink: #493f35;
-  --muted: #695d4e;
+  --gold-dark: #69491f;
+  --ink: #332a22;
+  --muted: #493f34;
   --line: #dfcfb1;
   --blush: #efe5d6;
   --shadow: 0 22px 60px rgba(74, 54, 30, .11);
@@ -123,11 +123,11 @@ select:focus-visible, textarea:focus-visible {
 .envelope-card .eyebrow { margin-bottom: 20px; letter-spacing: .28em; }
 .seal {
   display: flex;
-  width: 58px;
-  height: 58px;
+  width: 64px;
+  height: 64px;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 5px;
   margin: 0 auto 18px;
   border: 1px solid var(--gold);
   border-radius: 50%;
@@ -136,8 +136,8 @@ select:focus-visible, textarea:focus-visible {
   font-size: 16px;
   letter-spacing: .02em;
 }
-.seal .seal-initial { color: var(--gold-dark); font-family: var(--serif); font-size: 17px; }
-.seal .seal-ampersand { color: var(--gold); font-family: var(--script); font-size: 15px; }
+.seal .seal-initial { color: var(--gold-dark); font-family: var(--serif); font-size: 19px; }
+.seal .seal-ampersand { color: var(--gold); font-family: var(--script); font-size: 17px; }
 .envelope-intro { margin: 0 0 9px; color: var(--muted); font-size: 13px; letter-spacing: .12em; }
 .envelope-card h1 {
   margin: 0;
@@ -163,7 +163,7 @@ select:focus-visible, textarea:focus-visible {
   padding: 13px 24px;
   border: 1px solid #ae8952;
   border-radius: 2px;
-  background: linear-gradient(135deg, #c8a875, #a37a43);
+  background: linear-gradient(135deg, #a9824c, #79572d);
   box-shadow: 0 7px 18px rgba(133, 97, 46, .14);
   color: #fffdf8;
   cursor: pointer;
@@ -235,7 +235,7 @@ select:focus-visible, textarea:focus-visible {
 .closing-names .name-line, .closing-names .ampersand { display: block; }
 .couple-name .name-line { color: var(--ink); font-family: var(--serif); font-size: 1em; }
 .couple-name .ampersand, .closing-names .ampersand { margin: 2px 0 0; color: var(--gold); font-family: var(--script); font-size: .78em; line-height: .78; }
-.invitation-copy { max-width: 520px; margin: 20px auto; color: #5e5549; font-size: 16px; line-height: 1.85; }
+.invitation-copy { max-width: 520px; margin: 20px auto; color: #40372e; font-size: 16px; line-height: 1.8; text-wrap: pretty; }
 .text-link { display: inline-block; padding-bottom: 4px; border-bottom: 1px solid var(--line); color: var(--gold-dark); font-size: 13px; letter-spacing: .06em; text-decoration: none; }
 .text-link:hover { border-color: var(--gold-dark); }
 
@@ -243,7 +243,7 @@ select:focus-visible, textarea:focus-visible {
 .countdown-section { background: linear-gradient(180deg, #efe5d6, #f4ecdf); text-align: center; }
 .countdown { display: grid; max-width: 530px; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 28px auto 18px; }
 .countdown div { padding: 15px 4px 11px; border: 1px solid #d8c39f; background: rgba(255,253,248,.68); }
-.countdown strong { display: block; color: #85643b; font-family: var(--serif); font-size: clamp(28px, 7vw, 40px); font-weight: 500; line-height: 1.05; }
+.countdown strong { display: block; color: var(--gold-dark); font-family: var(--serif); font-size: clamp(28px, 7vw, 40px); font-weight: 500; line-height: 1.05; }
 .countdown span { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; letter-spacing: .04em; }
 .date-note { color: var(--muted); font-size: 13px; letter-spacing: .05em; }
 .details-section { max-width: 900px; margin: auto; text-align: center; }
@@ -254,7 +254,7 @@ select:focus-visible, textarea:focus-visible {
   background: rgba(255,253,248,.76);
   box-shadow: var(--shadow);
 }
-.detail-icon { color: var(--gold); font-family: var(--serif); font-size: 27px; line-height: 1.3; }
+.detail-icon { color: var(--gold-dark); font-family: var(--serif); font-size: 27px; line-height: 1.3; }
 .detail-label { margin: 7px 0 2px; color: var(--gold-dark); }
 .detail-card h3 { margin: 0 0 4px; font-family: var(--serif); font-size: 29px; font-weight: 500; line-height: 1.2; }
 .detail-card p { margin: 6px 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
@@ -276,7 +276,7 @@ select:focus-visible, textarea:focus-visible {
 /* RSVP and wedding gift */
 .rsvp-section { max-width: 690px; margin: auto; text-align: center; }
 .rsvp-form { max-width: 470px; margin: 28px auto 0; text-align: left; }
-.rsvp-form label { display: block; margin: 17px 0 7px; color: #665239; font-size: 14px; font-weight: 500; letter-spacing: .01em; }
+.rsvp-form label { display: block; margin: 17px 0 7px; color: #493a2b; font-size: 14px; font-weight: 500; letter-spacing: .01em; }
 .rsvp-form input, .rsvp-form select, .rsvp-form textarea {
   width: 100%;
   padding: 14px 14px;
@@ -290,7 +290,7 @@ select:focus-visible, textarea:focus-visible {
 .submit-button { width: 100%; margin-top: 22px; }
 .form-note { color: #695d4e; font-size: 13px; line-height: 1.7; }
 .gift-section { max-width: 760px; margin: 0 auto; background: var(--paper); text-align: center; }
-.gift-copy { max-width: 520px; margin: 0 auto; color: #5e5549; font-size: 16px; line-height: 1.85; }
+.gift-copy { max-width: 520px; margin: 0 auto; color: #40372e; font-size: 16px; line-height: 1.8; text-wrap: pretty; }
 .gift-button {
   display: inline-flex;
   min-height: 48px;
@@ -315,8 +315,8 @@ select:focus-visible, textarea:focus-visible {
 /* Closing note and dialogs */
 .closing { padding-top: 58px; padding-bottom: 38px; background: linear-gradient(180deg, #efe5d6, #f5eee2); text-align: center; }
 .closing-ornament { color: var(--gold); font-family: var(--serif); font-size: 45px; line-height: 1; }
-.thank-you { margin: 0; color: #8f6a36; font-family: var(--script); font-size: 54px; font-weight: 400; line-height: 1.2; }
-.closing-copy { max-width: 390px; margin: 14px auto; color: #746858; font-family: var(--serif); font-size: 17px; line-height: 1.6; }
+.thank-you { margin: 0; color: #674517; font-family: var(--script); font-size: 54px; font-weight: 400; line-height: 1.2; }
+.closing-copy { max-width: 390px; margin: 14px auto; color: #40362b; font-family: var(--serif); font-size: 17px; line-height: 1.6; text-wrap: pretty; }
 .closing-names { margin: 9px 0 0; color: #765631; font-family: var(--serif); font-size: 29px; line-height: 1; }
 .closing-names .name-line { font-size: 1em; line-height: 1.05; }
 .closing-names .ampersand { font-size: .75em; }
@@ -355,6 +355,9 @@ select:focus-visible, textarea:focus-visible {
   .countdown { gap: 5px; }
   .countdown div { padding-right: 2px; padding-left: 2px; }
   .music-control { right: 9px; }
+}
+@media (max-width: 600px) {
+  .invitation-copy, .gift-copy, .closing-copy { max-width: 36ch; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
