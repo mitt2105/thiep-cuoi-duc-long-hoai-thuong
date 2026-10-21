@@ -381,3 +381,13 @@ Nêu
   .gift-copy-line, .rsvp-copy-line { display: block; }
 }
 @media (max-width: 600px) { .rsvp-copy { max-width: none; } }
+/* Giữ nguyên cách xuống dòng lời mời trên điện thoại */
+.rsvp-copy-line {
+  display: inline;
+}
+
+@media (max-width: 600px) {
+  .rsvp-copy-line {
+    display: block;
+  }
+}
