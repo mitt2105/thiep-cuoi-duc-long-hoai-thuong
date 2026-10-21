@@ -375,3 +375,9 @@ Nêu
   .rsvp-form { margin-top: 20px; }
   .rsvp-form label { margin-top: 14px; }
 }
+
+@media (max-width: 600px) {
+  .gift-copy { max-width: none; }
+  .gift-copy-line, .rsvp-copy-line { display: block; }
+}
+@media (max-width: 600px) { .rsvp-copy { max-width: none; } }
