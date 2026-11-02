@@ -1,14 +1,15 @@
 const $ = (id) => document.getElementById(id);
 const weddingDate = new Date('2026-12-04T18:00:00+07:00').getTime();
 
-// Khởi tạo trình phát nhạc trước khi sử dụng
+// Khởi tạo trình phát nhạc
 const audio = $('weddingMusic');
 
+// Mở thiệp và phát nhạc
 $('openInvitation').addEventListener('click', () => {
   const envelope = $('envelopeScreen');
   const invitation = $('invitationContent');
 
-  // Tự phát nhạc khi khách nhấn MỞ THIỆP
+  // Phát nhạc khi khách nhấn MỞ THIỆP
   audio.play().then(() => {
     $('musicLabel').textContent = 'Tắt nhạc';
     $('musicToggle').setAttribute('aria-pressed', 'true');
@@ -118,7 +119,6 @@ document.addEventListener('keydown', (event) => {
 });
 
 // Audio playback needs a user-provided file at music/wedding.mp3.
-const audio = $('weddingMusic');
 $('musicToggle').addEventListener('click', async () => {
   if (!audio.querySelector('source') && !audio.src) {
     audio.src = 'music/wedding.mp3';
