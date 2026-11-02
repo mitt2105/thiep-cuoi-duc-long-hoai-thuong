@@ -40,29 +40,6 @@ $('openInvitation').addEventListener('click', () => {
   }, 260);
 });
 
-  envelope.classList.add('envelope-closing');
-  envelope.style.transition = 'opacity .25s ease, transform .25s ease';
-  envelope.style.opacity = '0';
-  envelope.style.transform = 'translateY(-8px)';
-
-  window.setTimeout(() => {
-    envelope.hidden = true;
-    invitation.hidden = false;
-
-    // Reset scroll immediately to prevent a large blank gap on mobile.
-    const root = document.documentElement;
-    const previousBehavior = root.style.scrollBehavior;
-    root.style.scrollBehavior = 'auto';
-
-    window.scrollTo(0, 0);
-
-    requestAnimationFrame(() => {
-      window.scrollTo(0, 0);
-      root.style.scrollBehavior = previousBehavior;
-    });
-  }, 260);
-});
-
 function updateCountdown() {
   const diff = weddingDate - Date.now();
   if (diff <= 0) {
