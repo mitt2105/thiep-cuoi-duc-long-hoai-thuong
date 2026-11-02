@@ -4,6 +4,13 @@ const weddingDate = new Date('2026-12-04T18:00:00+07:00').getTime();
 $('openInvitation').addEventListener('click', () => {
   const envelope = $('envelopeScreen');
   const invitation = $('invitationContent');
+  audio.play().then(() => {
+    $('musicLabel').textContent = 'Tắt nhạc';
+    $('musicToggle').setAttribute('aria-pressed', 'true');
+  }).catch(() => {
+    $('musicLabel').textContent = 'Bật nhạc';
+    $('musicToggle').setAttribute('aria-pressed', 'false');
+  });
 
   envelope.classList.add('envelope-closing');
   envelope.style.transition = 'opacity .25s ease, transform .25s ease';
