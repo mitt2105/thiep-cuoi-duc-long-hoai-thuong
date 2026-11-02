@@ -1,9 +1,14 @@
 const $ = (id) => document.getElementById(id);
 const weddingDate = new Date('2026-12-04T18:00:00+07:00').getTime();
 
+// Khởi tạo trình phát nhạc trước khi sử dụng
+const audio = $('weddingMusic');
+
 $('openInvitation').addEventListener('click', () => {
   const envelope = $('envelopeScreen');
   const invitation = $('invitationContent');
+
+  // Tự phát nhạc khi khách nhấn MỞ THIỆP
   audio.play().then(() => {
     $('musicLabel').textContent = 'Tắt nhạc';
     $('musicToggle').setAttribute('aria-pressed', 'true');
@@ -11,6 +16,28 @@ $('openInvitation').addEventListener('click', () => {
     $('musicLabel').textContent = 'Bật nhạc';
     $('musicToggle').setAttribute('aria-pressed', 'false');
   });
+
+  envelope.classList.add('envelope-closing');
+  envelope.style.transition = 'opacity .25s ease, transform .25s ease';
+  envelope.style.opacity = '0';
+  envelope.style.transform = 'translateY(-8px)';
+
+  window.setTimeout(() => {
+    envelope.hidden = true;
+    invitation.hidden = false;
+
+    const root = document.documentElement;
+    const previousBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+
+    window.scrollTo(0, 0);
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = previousBehavior;
+    });
+  }, 260);
+});
 
   envelope.classList.add('envelope-closing');
   envelope.style.transition = 'opacity .25s ease, transform .25s ease';
