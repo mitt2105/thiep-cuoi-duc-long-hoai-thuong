@@ -12,6 +12,7 @@
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Montserrat', Arial, sans-serif;
   --handwriting: 'Allura', cursive;
+  --script: 'Great Vibes', 'Allura', cursive;
 }
 
 * { box-sizing: border-box; }
@@ -403,4 +404,264 @@ Nêu
   font-size: clamp(27px, 6vw, 36px);
   line-height: 1.3;
   margin-bottom: 16px;
+}
+
+/* Forest green invitation style inspired by the selected canvas template. */
+:root {
+  --cream: #f5f4ef;
+  --paper: #fffefa;
+  --green: #173d2e;
+  --green-deep: #103426;
+  --green-soft: #315b45;
+  --gold: #c9aa78;
+  --gold-dark: #725b37;
+  --ink: #26392f;
+  --muted: #59645c;
+  --line: #d8ddcf;
+  --blush: #ede9df;
+  --shadow: 0 18px 50px rgba(24, 48, 35, .1);
+}
+body { background: #f6f6f2; color: var(--ink); }
+.eyebrow { color: var(--green-soft); }
+.gold-rule { color: var(--green-soft); }
+.gold-rule::before, .gold-rule::after { background: #cbd5c9; }
+
+/* The quiet paper envelope on the opening screen. */
+.envelope-screen {
+  background:
+    radial-gradient(ellipse at 50% 45%, #fff 0, rgba(255,255,255,.88) 42%, transparent 74%),
+    linear-gradient(145deg, #f8f8f5, #edf0ea);
+}
+.envelope-screen::before, .envelope-screen::after { color: #b6c1ae; opacity: .3; }
+.petal { color: #82977f; }
+.envelope-card {
+  width: min(100%, 410px);
+  padding: 28px 24px 26px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.envelope-card::before { display: none; }
+.envelope-card .eyebrow { margin-bottom: 4px; color: #69766d; letter-spacing: .22em; }
+.envelope-intro { margin: 0 0 4px; color: #536156; font-family: var(--serif); font-size: 18px; letter-spacing: .02em; }
+.envelope-card h1 {
+  margin: 0 auto 21px;
+  color: #455448;
+  font-family: var(--handwriting);
+  font-size: clamp(34px, 9vw, 45px);
+  line-height: 1.1;
+}
+.envelope-card h1 .ampersand { color: #758b73; }
+.envelope-art {
+  position: relative;
+  width: min(100%, 260px);
+  height: 146px;
+  margin: 0 auto 17px;
+  overflow: visible;
+  border: 1px solid #d6d8d1;
+  background: linear-gradient(145deg, #fff, #f2f1ec);
+  box-shadow: 0 17px 32px rgba(38, 52, 41, .13);
+}
+.envelope-art::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 70%;
+  background: linear-gradient(145deg, #f4f3ee, #fff 70%);
+  clip-path: polygon(0 0, 100% 0, 50% 75%);
+  content: '';
+  filter: drop-shadow(0 1px 1px rgba(32, 53, 39, .16));
+}
+.envelope-art::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 70%;
+  background: linear-gradient(35deg, #e6e7e0, #fff 48%, #e8e9e2);
+  clip-path: polygon(0 100%, 50% 26%, 100% 100%);
+  content: '';
+}
+.wax-seal {
+  position: absolute;
+  z-index: 2;
+  top: 50%; left: 50%;
+  display: grid;
+  width: 42px; height: 42px;
+  place-content: center;
+  border: 1px solid #7f8980;
+  border-radius: 50%;
+  background: #253d31;
+  box-shadow: 0 2px 7px rgba(0,0,0,.2);
+  color: #f8f7ef;
+  font-family: var(--serif);
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+}
+.wax-seal span { display: inline; color: #d3bd93; font-family: var(--script); }
+.envelope-flower { position: absolute; z-index: 3; color: #7a9678; text-shadow: 0 1px 0 #fff; }
+.flower-left { top: -25px; left: -28px; font-size: 53px; transform: rotate(-24deg); }
+.flower-right { right: -23px; bottom: -28px; font-size: 47px; transform: rotate(18deg); }
+.date-large { margin: 0 0 13px; color: #5d6d5e; font-family: var(--serif); font-size: 15px; letter-spacing: .16em; }
+.open-button, .primary-button {
+  border-color: var(--green);
+  background: var(--green);
+  box-shadow: 0 8px 20px rgba(16,52,38,.15);
+}
+.open-button { min-height: 40px; padding: 10px 24px; border-radius: 3px; font-weight: 500; }
+.envelope-note { margin-top: 10px; color: #617064; font-family: var(--serif); font-size: 15px; }
+.scroll-hint { color: #607362; }
+
+/* The open card uses a photo pairing, green date panel and small calendar. */
+.invitation-content { background: #fafaf7; }
+.hero { max-width: 610px; padding-top: 48px; }
+.hero .eyebrow { margin-bottom: 14px; letter-spacing: .2em; }
+.hero-collage {
+  position: relative;
+  display: grid;
+  width: min(100%, 460px);
+  height: clamp(285px, 76vw, 410px);
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin: 0 auto 26px;
+  padding: 10px 10px 100px;
+  overflow: hidden;
+  background: var(--green);
+  box-shadow: 0 16px 32px rgba(19, 48, 33, .18);
+}
+.collage-photo { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; }
+.collage-main { object-position: 53% 32%; }
+.collage-side { object-position: 50% 35%; }
+.collage-ribbon {
+  position: absolute;
+  z-index: 2;
+  right: 9%; bottom: 36px; left: 9%;
+  display: grid;
+  min-height: 112px;
+  align-content: center;
+  gap: 2px;
+  padding: 10px 16px;
+  background: #fffefa;
+  box-shadow: 0 4px 14px rgba(0,0,0,.13);
+  color: var(--green);
+  transform: rotate(-2deg);
+}
+.collage-ribbon span { font-size: 9px; letter-spacing: .2em; }
+.collage-ribbon strong { font-family: var(--serif); font-size: clamp(25px, 7vw, 34px); font-weight: 500; line-height: 1.15; }
+.collage-ribbon small { font-size: 9px; letter-spacing: .14em; }
+.collage-sprig { position: absolute; z-index: 3; color: #b5c79f; }
+.sprig-one { bottom: 5px; left: -8px; font-size: 62px; transform: rotate(-30deg); }
+.sprig-two { right: 2px; bottom: 5px; color: #d2bda0; font-size: 34px; }
+.couple-name { margin: 10px 0 3px; color: var(--green); font-size: clamp(46px, 12vw, 65px); }
+.couple-name .name-line { color: var(--green); }
+.couple-name .ampersand { margin: -2px 0; color: #7b9278; }
+.hero-subtitle { margin: 5px 0 26px; color: #68736a; font-family: var(--serif); font-size: 16px; font-style: italic; }
+.invitation-copy { color: #59645c; }
+.text-link { border-color: #a9b7a6; color: var(--green); }
+.calendar-card {
+  display: grid;
+  width: min(100%, 490px);
+  grid-template-columns: .86fr 1.14fr;
+  gap: 16px;
+  margin: 34px auto 0;
+  padding: 14px;
+  background: var(--green);
+  box-shadow: 0 16px 35px rgba(20, 50, 34, .14);
+  color: #f8f8f1;
+  text-align: left;
+}
+.calendar-photo { position: relative; min-height: 220px; padding: 7px 7px 26px; background: #f7f6f0; }
+.calendar-photo img { display: block; width: 100%; height: 100%; min-height: 187px; object-fit: cover; object-position: 50% 24%; }
+.calendar-photo span { position: absolute; right: 0; bottom: 3px; left: 0; color: #445448; font-family: var(--handwriting); font-size: 22px; line-height: 1; text-align: center; }
+.calendar-month { align-self: center; padding: 6px 3px; }
+.calendar-month > p { margin: 0; color: #d9dfd1; font-size: 9px; letter-spacing: .2em; }
+.calendar-month h3 { margin: -2px 0 10px; color: #fff; font-family: var(--serif); font-size: 26px; font-weight: 400; }
+.calendar-month h3 span { font-size: .55em; letter-spacing: .13em; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px 2px; text-align: center; }
+.calendar-grid span { display: grid; min-height: 21px; place-items: center; font-size: 10px; }
+.calendar-grid .calendar-weekday { color: #ced8c7; font-size: 8px; }
+.calendar-grid .calendar-day { color: #f0f2eb; }
+.calendar-grid .wedding-day { width: 23px; height: 23px; justify-self: center; border: 1px solid #e2c7a4; border-radius: 50%; color: #ffe6c0; }
+
+/* Alternate soft paper and deep green panels down the long mobile invitation. */
+.countdown-section, .closing {
+  background: var(--green);
+  color: #f8f8f1;
+}
+.countdown-section .eyebrow, .closing .eyebrow { color: #d4c29e; }
+.countdown-section .section-title, .closing .thank-you, .closing-names { color: #fffefa; }
+.countdown { gap: 7px; }
+.countdown div { border-color: rgba(243,239,222,.28); background: rgba(255,255,255,.07); }
+.countdown strong, .countdown span, .date-note { color: #f2f1e8; }
+.details-section { max-width: 900px; }
+.detail-card { border-color: #dfe2d9; background: #fffefa; box-shadow: 0 10px 30px rgba(22,49,33,.06); }
+.detail-icon, .detail-label, .detail-card h3 { color: var(--green); }
+.map-button { border-color: var(--green); background: var(--green); }
+.gallery-section, .gift-section { background: #eef1eb; }
+.gallery-item { border-color: #d1d8cf; background: #dce4da; }
+.rsvp-form input, .rsvp-form select, .rsvp-form textarea { border-color: #cbd4c9; border-radius: 3px; }
+.gift-button { border-color: var(--green); color: var(--green); }
+.gift-button:hover { background: var(--green); color: #fff; }
+.closing { padding-top: 62px; }
+.closing-ornament { color: #d4c29e; }
+.closing-copy { color: #e6e9df; }
+.closing-names { color: #fff; }
+.closing-names .ampersand { color: #d4c29e; }
+.back-top { border-color: #d4c29e; color: #fff; }
+.music-button { border-color: rgba(23,61,46,.28); color: var(--green); }
+.music-button[aria-pressed="true"] { border-color: var(--green); background: var(--green); color: white; }
+.gift-modal-card { border-color: #d5dccf; }
+
+@media (max-width: 420px) {
+  .hero { padding-right: 16px; padding-left: 16px; }
+  .hero-collage { height: 300px; padding-bottom: 89px; }
+  .collage-ribbon { bottom: 28px; min-height: 100px; }
+  .calendar-card { gap: 10px; padding: 10px; }
+  .calendar-photo { min-height: 194px; }
+  .calendar-photo img { min-height: 161px; }
+  .calendar-grid { gap: 3px 1px; }
+  .calendar-grid span { min-height: 19px; font-size: 9px; }
+  .calendar-grid .wedding-day { width: 21px; height: 21px; }
+}
+
+/* Personalized guest names and gentle motion through the photo story. */
+.envelope-intro { max-width: 30ch; margin-right: auto; margin-left: auto; }
+#guestGreeting { display: inline-block; animation: guest-arrive .8s ease both; }
+@keyframes guest-arrive {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.guest-personalized {
+  width: fit-content;
+  max-width: 100%;
+  margin: 15px auto 10px;
+  padding: 7px 14px;
+  border: 1px solid #d8ddcf;
+  border-radius: 30px;
+  background: #f3f5f0;
+  color: var(--green);
+  font-family: var(--serif);
+  font-size: 17px;
+}
+.moving-words {
+  width: min(100%, 490px);
+  overflow: hidden;
+  margin: 0 auto 14px;
+  padding: 9px 0;
+  border-top: 1px solid #dfe4db;
+  border-bottom: 1px solid #dfe4db;
+  color: #526957;
+  white-space: nowrap;
+}
+.moving-words-track { display: flex; width: max-content; animation: move-words 26s linear infinite; }
+.moving-words-track span { padding-right: 32px; font-size: 10px; letter-spacing: .16em; }
+.moving-words-track b { padding: 0 10px; color: #b99c70; font-weight: 400; }
+@keyframes move-words { to { transform: translateX(-50%); } }
+.moving-gallery { width: min(100%, 490px); overflow: hidden; margin: 0 auto 31px; }
+.moving-gallery-track { display: flex; width: max-content; gap: 9px; animation: move-photos 34s linear infinite; }
+.moving-gallery img { display: block; width: clamp(92px, 23vw, 126px); height: clamp(104px, 26vw, 146px); border: 4px solid #fffefa; box-shadow: 0 5px 16px rgba(24,48,35,.13); object-fit: cover; }
+@keyframes move-photos { to { transform: translateX(calc(-50% - 4.5px)); } }
+.moving-words:hover .moving-words-track, .moving-gallery:hover .moving-gallery-track { animation-play-state: paused; }
+.moving-gallery { -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+@media (prefers-reduced-motion: reduce) {
+  #guestGreeting, .moving-words-track, .moving-gallery-track { animation: none; }
+  .moving-gallery { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
 }

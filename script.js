@@ -1,6 +1,15 @@
 const $ = (id) => document.getElementById(id);
 const weddingDate = new Date('2026-12-04T18:00:00+07:00').getTime();
 
+// Personal invitation links use ?to=Guest+Name.
+const inviteeName = (new URLSearchParams(window.location.search).get('to') || '').trim();
+if (inviteeName) {
+  $('guestGreeting').textContent = `Trân trọng kính mời ${inviteeName}`;
+  $('heroGuestGreeting').textContent = `Thân mời ${inviteeName} đến chung vui cùng gia đình`;
+  $('heroGuestGreeting').hidden = false;
+  $('guestName').value = inviteeName;
+}
+
 // Khởi tạo trình phát nhạc
 const audio = $('weddingMusic');
 
@@ -54,6 +63,33 @@ function updateCountdown() {
   $('seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
 }
 updateCountdown(); window.setInterval(updateCountdown, 1000);
+
+// Build the wedding month calendar with Monday as the first weekday.
+const calendar = $('weddingCalendar');
+if (calendar) {
+  const headings = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+  headings.forEach((day) => {
+    const cell = document.createElement('span');
+    cell.className = 'calendar-weekday';
+    cell.textContent = day;
+    calendar.append(cell);
+  });
+  const firstDay = new Date(2026, 11, 1).getDay();
+  const offset = (firstDay + 6) % 7;
+  const numberOfDays = new Date(2026, 12, 0).getDate();
+  for (let index = 0; index < offset; index += 1) {
+    const blank = document.createElement('span');
+    blank.className = 'calendar-blank';
+    calendar.append(blank);
+  }
+  for (let day = 1; day <= numberOfDays; day += 1) {
+    const cell = document.createElement('span');
+    cell.className = day === 4 ? 'calendar-day wedding-day' : 'calendar-day';
+    cell.textContent = day;
+    if (day === 4) cell.setAttribute('aria-label', 'Ngày cưới: 4 tháng 12 năm 2026');
+    calendar.append(cell);
+  }
+}
 
 // Lightbox: tap any gallery photo to enlarge it.
 const lightbox = $('lightbox');

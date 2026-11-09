@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d2e">
+  <title>Tạo thiệp mời hàng loạt — Đức Long & Hoài Thương</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { min-height: 100vh; padding: 34px 16px; background: #f1f3ee; }
+    .guest-tool { width: min(100%, 760px); margin: auto; padding: clamp(22px, 5vw, 42px); border: 1px solid #d8ddcf; background: #fffefa; box-shadow: 0 18px 50px rgba(24,48,35,.1); }
+    .guest-tool h1 { margin: 0; color: #173d2e; font-family: var(--serif); font-size: clamp(34px, 8vw, 48px); font-weight: 500; line-height: 1.08; }
+    .guest-tool-intro { color: #59645c; }
+    .guest-tool label { display: block; margin: 20px 0 8px; color: #26392f; font-size: 14px; font-weight: 500; }
+    .guest-tool textarea { display: block; width: 100%; min-height: 190px; resize: vertical; padding: 14px; border: 1px solid #cbd4c9; border-radius: 4px; background: #fff; color: #26392f; font: inherit; line-height: 1.7; }
+    .guest-tool textarea:focus-visible, .guest-link:focus-visible { outline: 2px solid #315b45; outline-offset: 2px; }
+    .guest-tool input[type=file] { display: block; max-width: 100%; color: #59645c; }
+    .guest-tool .form-note { min-height: 1.6em; }
+    .guest-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .guest-actions .primary-button { flex: 1 1 190px; }
+    .guest-secondary { min-height: 48px; padding: 12px 18px; border: 1px solid #b8c5b7; border-radius: 3px; background: transparent; color: #173d2e; cursor: pointer; font: inherit; font-size: 13px; }
+    .guest-results { display: grid; gap: 10px; margin-top: 24px; }
+    .guest-row { display: grid; grid-template-columns: minmax(120px, .7fr) minmax(0, 1.5fr) auto; align-items: center; gap: 9px; padding: 12px; border: 1px solid #e0e4dc; background: #fbfcf9; }
+    .guest-name { overflow-wrap: anywhere; color: #26392f; font-weight: 500; }
+    .guest-link { min-width: 0; width: 100%; padding: 9px; border: 1px solid #e0e4dc; border-radius: 3px; color: #59645c; font: inherit; font-size: 12px; }
+    .copy-link { padding: 9px 12px; border: 1px solid #173d2e; border-radius: 3px; background: #173d2e; color: white; cursor: pointer; font: inherit; font-size: 12px; }
+    .guest-footer { margin-top: 25px; color: #667066; font-size: 12px; line-height: 1.7; }
+    .back-link { display: inline-block; margin-top: 14px; color: #315b45; }
+    @media (max-width: 560px) { .guest-row { grid-template-columns: 1fr auto; } .guest-name { grid-column: 1 / -1; } }
+  </style>
+</head>
+<body>
+  <main class="guest-tool">
+    <p class="eyebrow">ĐỨC LONG &amp; HOÀI THƯƠNG · 04.12.2026</p>
+    <h1>Tạo thiệp mời hàng loạt</h1>
+    <p class="guest-tool-intro">Nhập tên khách để tạo link thiệp riêng. Mỗi người sẽ thấy tên của mình trên phong bì.</p>
+    <label for="guestNames">Danh sách khách mời</label>
+    <textarea id="guestNames" placeholder="Mỗi dòng một khách mời&#10;Bạn Khánh&#10;Gia đình anh Phát&#10;Anh Nam Anh" spellcheck="false"></textarea>
+    <label for="guestCsv">Hoặc tải danh sách CSV (lấy tên ở cột đầu tiên)</label>
+    <input id="guestCsv" type="file" accept=".csv,text/csv">
+    <div class="guest-actions">
+      <button class="primary-button" id="createLinks" type="button">TẠO LINK THIỆP <span>↗</span></button>
+      <button class="guest-secondary" id="copyAll" type="button" disabled>Sao chép tất cả</button>
+      <button class="guest-secondary" id="downloadCsv" type="button" disabled>Tải CSV link</button>
+    </div>
+    <p id="guestStatus" class="form-note" role="status" aria-live="polite">Danh sách tối đa 1.000 khách mỗi lần.</p>
+    <section id="guestResults" class="guest-results" aria-label="Link thiệp theo khách mời"></section>
+    <p class="guest-footer">Tên khách chỉ được xử lý trong trình duyệt này. Công cụ tạo link để bạn tự gửi qua Zalo, email hoặc kênh bạn chọn; không tự gửi tin nhắn.</p>
+    <a class="back-link" href="index.html">← Quay lại thiệp cưới</a>
+  </main>
+  <script src="guest-manager.js"></script>
+</body>
+</html>

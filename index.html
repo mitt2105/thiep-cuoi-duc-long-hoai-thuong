@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f3ea">
+  <meta name="theme-color" content="#173d2e">
   <meta name="description" content="Thiệp mời tiệc cưới Đức Long & Hoài Thương — 04.12.2026">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Đức Long & Hoài Thương — Thiệp mời cưới">
@@ -28,13 +28,13 @@
     <section class="envelope-screen" id="envelopeScreen" aria-label="Phong bì thiệp cưới">
       <div class="petal petal-one">✿</div><div class="petal petal-two">❧</div>
       <div class="envelope-card">
-        <p class="eyebrow">WEDDING INVITATION</p>
-        <h1>Đức Long<br><span class="ampersand">&</span><br>Hoài Thương</h1>
-        <p class="envelope-intro">Trân trọng kính mời</p>
-        <div class="gold-rule"><span>✦</span></div>
+        <p class="eyebrow">THƯ MỜI</p>
+        <p class="envelope-intro"><span id="guestGreeting">Trân trọng kính mời quý khách</span></p>
+        <h1>Đức Long <span class="ampersand">&</span> Hoài Thương</h1>
+        <div class="envelope-art" aria-hidden="true"><span class="envelope-flower flower-left">✿</span><span class="envelope-flower flower-right">✿</span><span class="wax-seal">L<span>&amp;</span>T</span></div>
         <p class="date-large">04 · 12 · 2026</p>
         <button class="primary-button open-button" id="openInvitation" type="button">MỞ THIỆP <span>↗</span></button>
-        <p class="envelope-note">Một ngày vui sẽ trọn vẹn hơn khi có sự hiện diện của quý khách</p>
+        <p class="envelope-note">Chạm để mở lời mời</p>
       </div>
       <p class="scroll-hint">WITH LOVE, LONG & THƯƠNG</p>
     </section>
@@ -42,11 +42,27 @@
     <div id="invitationContent" class="invitation-content" hidden>
       <section class="hero section-pad" id="home">
         <p class="eyebrow">SAVE THE DATE · 04.12.2026</p>
-        <div class="hero-photo-frame">
-          <img src="images/anhcuoi20.jpg" alt="Ảnh cưới của Đức Long và Hoài Thương" class="hero-photo">
-          <span class="photo-caption">Our special day</span>
+        <div class="hero-collage">
+          <img class="collage-photo collage-main" src="images/anhcuoi20.jpg" alt="Đức Long và Hoài Thương trong ngày cưới">
+          <img class="collage-photo collage-side" src="images/anhcuoi14.jpg" alt="Khoảnh khắc hạnh phúc của cô dâu chú rể">
+          <div class="collage-ribbon"><span>SAVE THE DATE</span><strong>04 · 12 · 2026</strong><small>THỨ SÁU · 18:00</small></div>
+          <span class="collage-sprig sprig-one" aria-hidden="true">❧</span><span class="collage-sprig sprig-two" aria-hidden="true">✿</span>
         </div>
-        <h2 class="couple-name"><span class="name-line">Đức Long</span><span class="ampersand">&</span><span class="name-line">Hoài Thương</span></h2>
+        <h2 class="couple-name"><span class="name-line">Đức Long</span><span class="ampersand">&amp;</span><span class="name-line">Hoài Thương</span></h2>
+        <p class="guest-personalized" id="heroGuestGreeting" hidden></p>
+        <p class="hero-subtitle">Cùng nhau viết nên chương mới của cuộc đời</p>
+        <div class="moving-words" aria-label="Đức Long và Hoài Thương, ngày 4 tháng 12 năm 2026">
+          <div class="moving-words-track" aria-hidden="true"><span>ĐỨC LONG &amp; HOÀI THƯƠNG <b>✦</b> 04 · 12 · 2026 <b>✦</b> HÂN HẠNH ĐÓN TIẾP QUÝ KHÁCH <b>✦</b></span><span>ĐỨC LONG &amp; HOÀI THƯƠNG <b>✦</b> 04 · 12 · 2026 <b>✦</b> HÂN HẠNH ĐÓN TIẾP QUÝ KHÁCH <b>✦</b></span></div>
+        </div>
+        <div class="moving-gallery" aria-label="Ảnh cưới chuyển động">
+          <div class="moving-gallery-track" aria-hidden="true">
+            <img src="images/anhcuoi01.jpg" alt=""><img src="images/anhcuoi03.jpg" alt=""><img src="images/anhcuoi07.jpg" alt=""><img src="images/anhcuoi14.jpg" alt=""><img src="images/anhcuoi17.jpg" alt=""><img src="images/anhcuoi01.jpg" alt=""><img src="images/anhcuoi03.jpg" alt=""><img src="images/anhcuoi07.jpg" alt=""><img src="images/anhcuoi14.jpg" alt=""><img src="images/anhcuoi17.jpg" alt="">
+          </div>
+        </div>
+        <div class="calendar-card" aria-label="Lịch tháng 12 năm 2026">
+          <div class="calendar-photo"><img src="images/anhcuoi17.jpg" alt="Chân dung cô dâu và chú rể"><span>Our<br>Love</span></div>
+          <div class="calendar-month"><p>THÁNG</p><h3>12 <span>2026</span></h3><div class="calendar-grid" id="weddingCalendar" aria-label="Tháng 12 năm 2026"></div></div>
+        </div>
         <p class="invitation-copy">Sự hiện diện của quý khách là niềm vui<br>và niềm vinh hạnh đối với gia đình chúng tôi.<br>Trân trọng kính mời quý khách<br>đến chung vui trong ngày trọng đại.</p>
         <div class="gold-rule"><span>♡</span></div>
         <a class="text-link" href="#details">Xem thông tin buổi tiệc ↓</a>
@@ -166,6 +182,6 @@
     <button type="button" id="closeLightbox" class="lightbox-close" aria-label="Đóng ảnh">×</button>
     <img id="lightboxImage" src="" alt="Ảnh cưới phóng to">
   </div>
-  <script src="script.js?v=20261102-2"></script>
+  <script src="script.js?v=20261109-1"></script>
 </body>
 </html>
