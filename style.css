@@ -665,3 +665,15 @@ body { background: #f6f6f2; color: var(--ink); }
   #guestGreeting, .moving-words-track, .moving-gallery-track { animation: none; }
   .moving-gallery { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
 }
+
+/* Opening names: three centered lines on every screen size. */
+.envelope-card h1 .name-line {
+  display: block;
+  white-space: nowrap;
+}
+.envelope-card h1 .ampersand {
+  display: block;
+  margin: 0 auto;
+  font-size: .68em;
+  line-height: .82;
+}
